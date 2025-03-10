@@ -1,0 +1,72 @@
+# (2025-03-02) You may have to install the development version of `bslib` to
+# use `_brands.yml` (`remotes::install_github("rstudio/bslib", force = TRUE)`).
+
+url: https://danielvartan.github.io/quartor/
+
+template:
+  bslib:
+    version: 5
+  math-rendering: mathjax
+  light-switch: true
+  params:
+    noindex: false
+
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - news
+    right:
+    - search
+    - lightswitch
+    - github
+  components:
+    home: ~
+    intro: ~
+    articles: ~
+
+reference:
+- title: Zotero
+  contents:
+  # - bbt_detect_citations
+  # - bbt_scan_citation_keys
+  - bbt_write_quarto_bib
+
+# reference:
+# - title: Spell Check
+#   contents:
+#   - set_quarto_spell_check
+#   - spell_check_quarto
+#   - gather_words_from_spell_check
+#   - update_quarto_wordlist
+
+# - title: Diagnostics
+#   contents:
+#   - checK_missing_dollar_sign
+
+# - title: Replace
+#   contents:
+#   - apply_on_value_between_tags
+#   - get_value_between_tags
+#   - swap_value_between_files
+#   - swap_value_between_tags
+
+# - title: Utilities
+#   contents:
+#   - add_env_var
+#   - list_quarto_files
+#   - object_pandoc_render
+#   - object_quarto_render
+#   - quarto_status
+#   - unfreeze_quarto_file
+
+authors:
+  Daniel Vartanian:
+    href: https://github.com/danielvartan/
+
+development:
+  mode: auto
+  version_label: warning
