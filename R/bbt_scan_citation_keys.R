@@ -14,9 +14,15 @@ bbt_scan_citation_keys <- function(
   checkmate::assert_class(locale, "locale")
 
   bbt_types <- c(
-    "article", "booklet", "conference", "inbook", "incollection",
-    "inproceedings", "manual", "mastersthesis", "misc", "phdthesis",
-    "proceedings", "techreport", "unpublished"
+    "article", "artwork", "audio", "bibnote", "book", "mvbook", "inbook",
+    "bookinbook", "suppbook", "booklet", "conference", "collection",
+    "mvcollection", "incollection", "suppcollection", "commentary", "dataset",
+    "eletronic", "image", "inproceedings", "jurisdiction", "legislation",
+    "legal", "letter", "manual", "mastersthesis", "misc", "movie", "music",
+    "online", "patent", "performance", "periodical", "suppperiodical",
+    "phdthesis", "proceedings", "mvproceedings", "inproceedings", "reference",
+    "mvreference", "inreference", "report", "review", "set", "software",
+    "standard", "techreport", "thesis", "unpublished", "video", "xdata"
   )
 
   quarto_types <- c(
@@ -38,7 +44,7 @@ bbt_scan_citation_keys <- function(
     sort()
 
   out <-
-    out[!out %in% bbt_types] |>
+    out[!tolower(out) %in% bbt_types] |>
     stringr::str_subset(
       paste0("^", quarto_types, collapse = "|"), negate = TRUE
     )
