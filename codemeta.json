@@ -2,8 +2,8 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "quartor",
-  "description": "A set of tools designed to facilitate the use of the Quarto publishing system.",
-  "name": "quartor: Tools for the Quarto Publishing System",
+  "description": "Tools designed to facilitate the use of the Quarto publishing system.",
+  "name": "quartor: Quarto Tools",
   "relatedLink": "https://danielvartan.github.io/quartor/",
   "codeRepository": "https://github.com/danielvartan/quartor/",
   "issueTracker": "https://github.com/danielvartan/quartor/issues/",
@@ -157,6 +157,19 @@
     },
     "6": {
       "@type": "SoftwareApplication",
+      "identifier": "fs",
+      "name": "fs",
+      "version": ">= 1.6.5",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=fs"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
       "identifier": "lifecycle",
       "name": "lifecycle",
       "version": ">= 1.0.4",
@@ -168,7 +181,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lifecycle"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "magrittr",
       "name": "magrittr",
@@ -181,7 +194,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magrittr"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "quarto",
       "name": "quarto",
@@ -194,13 +207,13 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=quarto"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "rbbt",
       "name": "rbbt",
       "sameAs": "https://github.com/wmoldham/rbbt"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
@@ -213,7 +226,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
@@ -226,13 +239,13 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "rutils",
       "name": "rutils",
       "sameAs": "https://github.com/danielvartan/rutils"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
@@ -245,7 +258,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=spelling"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -258,7 +271,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "yaml",
       "name": "yaml",
@@ -273,7 +286,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "47.895KB",
+  "fileSize": "101.551KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -288,11 +301,13 @@
         }
       ],
       "name": "{quartor}: Tools for the Quarto publishing system",
-      "url": "https://danielvartan.github.io/quartor",
+      "url": "https://danielvartan.github.io/quartor/",
       "description": "R package"
     }
   ],
   "releaseNotes": "https://github.com/danielvartan/quartor/blob/master/NEWS.md",
+  "readme": "https://github.com/danielvartan/quartor/blob/main/README.md",
   "contIntegration": ["https://github.com/danielvartan/quartor/actions/workflows/check-standard.yaml", "https://app.codecov.io/gh/danielvartan/quartor?branch=main"],
-  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"]
+  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"],
+  "keywords": ["computational-notebooks", "latex", "publishing", "quarto", "r", "r-packages", "zotero"]
 }

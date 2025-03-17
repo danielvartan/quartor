@@ -2,7 +2,7 @@
 % Please edit documentation in R/bbt_write_quarto_bib.R
 \name{bbt_write_quarto_bib}
 \alias{bbt_write_quarto_bib}
-\title{Write a bibliography file from Zotero citation keys for a whole R project}
+\title{Scan citations and write a bibliography file for a whole R project}
 \usage{
 bbt_write_quarto_bib(
   bib_file = here::here("references.json"),
@@ -70,7 +70,7 @@ scans all files in a project directory and subdirectories for citation
 keys, ensuring that all citations are included in the bibliography file.
 }
 \details{
-\subsection{BetterBibTeX}{
+\subsection{Better BibTeX}{
 
 To use this function, you must have the BetterBibTeX
 (\href{https://retorque.re/zotero-better-bibtex/}{BBT}) extension installed in

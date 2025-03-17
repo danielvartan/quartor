@@ -6,8 +6,13 @@ url: https://danielvartan.github.io/quartor/
 template:
   bslib:
     version: 5
+    brand: "./_brand.yml"
   math-rendering: mathjax
   light-switch: true
+  opengraph:
+    image:
+      src: man/figures/og-image.png
+      alt: "{quartor}"
   params:
     noindex: false
 

@@ -7,12 +7,12 @@ cff-version: 1.2.0
 message: 'To cite package "quartor" in publications use:'
 type: software
 license: MIT
-title: 'quartor: Tools for the Quarto Publishing System'
+title: 'quartor: Quarto Tools'
 version: 0.0.0.9000
 identifiers:
 - type: url
   value: https://github.com/danielvartan/quartor/
-abstract: A set of tools designed to facilitate the use of the Quarto publishing system.
+abstract: Tools designed to facilitate the use of the Quarto publishing system.
 authors:
 - family-names: Vartanian
   given-names: Daniel
@@ -27,7 +27,7 @@ preferred-citation:
     email: danvartan@gmail.com
     orcid: https://orcid.org/0000-0001-7782-759X
   year: '2025'
-  url: https://danielvartan.github.io/quartor
+  url: https://danielvartan.github.io/quartor/
   notes: R package
 repository-code: https://github.com/danielvartan/quartor/issues/
 url: https://danielvartan.github.io/quartor/
@@ -115,6 +115,24 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.here
   version: '>= 1.0.1'
+- type: software
+  title: fs
+  abstract: 'fs: Cross-Platform File System Operations Based on ''libuv'''
+  notes: Imports
+  url: https://fs.r-lib.org
+  repository: https://CRAN.R-project.org/package=fs
+  authors:
+  - family-names: Hester
+    given-names: Jim
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.fs
+  version: '>= 1.6.5'
 - type: software
   title: lifecycle
   abstract: 'lifecycle: Manage the Life Cycle of your Package Functions'

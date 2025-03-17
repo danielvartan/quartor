@@ -1,0 +1,83 @@
+meta:
+  name:
+    short: "{quartor}"
+    long: "{quartor}: Tools for the Quarto publishing system"
+  link:
+    home: https://danielvartan.github.io/quartor
+    github: https://github.com/danielvartan/quartor
+  description: |
+    An R package with tools designed to facilitate the use of the Quarto
+    publishing system.
+
+logo:
+  images:
+    hex-logo:
+      path: man/figures/logo.svg
+      alt: "Hex logo"
+
+color:
+  palette:
+    blue: "#39729E"
+    blue-light: "#74AADB"
+    blue-pale: "#D7DDEB"
+    blue-dark: "#0C5073"
+    blue-button: "#447099"
+    blue-favicon: "#74BBFF"
+    blue-pale-bg-1: "#F0F5F9"
+    blue-pale-bg-2: "#F7F9FB"
+    white: "#FFFFFF"
+    gray: "#959595"
+    black: "#343A40"
+  background: blue-pale-bg-2
+  primary: blue
+  secondary: blue-light
+  tertiary: blue-pale
+  success: blue
+  info: blue
+  warning: blue
+  danger: blue
+  light: white
+  dark: black
+
+typography:
+  fonts:
+    - family: Poppins
+      source: google
+      weight: [300, 400, 600, 700, 900]
+    - family: Source Sans Pro
+      source: google
+      weight: [400, 600, 700, 900]
+    - family: Source Code Pro
+      source: google
+  base:
+    family: Source Sans Pro
+    line-height: 1.5
+    weight: normal
+  headings:
+    family: Source Sans Pro
+    weight: 600
+    color: blue
+  link:
+    color: blue
+    decoration: underline
+  monospace: Source Code Pro
+
+defaults:
+  bootstrap:
+    rules: |
+      [data-bs-theme="dark"] pre, [data-bs-theme="dark"] body {
+        color: #FFFFFF;
+      }
+
+      [data-bs-theme="dark"] pre, [data-bs-theme="dark"] .text-warning {
+        color: #74BBFF !important;
+      }
+
+      [data-bs-theme="dark"] pre, [data-bs-theme="dark"] a {
+        color: #74BBFF;
+      }
+
+      [data-bs-theme="dark"] pre, [data-bs-theme="dark"] .nav-link,
+      .navbar-brand {
+        color: var(--bs-navbar-brand-color) !important;
+      }

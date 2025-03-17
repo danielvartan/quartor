@@ -25,13 +25,13 @@ clean_quarto_mess <- function(
 
   for (i in file) {
     if (checkmate::test_file_exists(file.path(wd, i))) {
-      rutils:::delete_file(i)
+      fs::file_delete(i)
     }
   }
 
   for (i in dir) {
     if (checkmate::test_directory_exists(file.path(wd, i))) {
-      rutils:::delete_dir(i)
+      fs::file_delete(i)
     }
   }
 

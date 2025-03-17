@@ -1,4 +1,4 @@
-# quartor
+# quartor <a href = "https://danielvartan.github.io/brandr/"><img src = "man/figures/logo.png" align="right" width="120" /></a>
 
 <!-- quarto render -->
 
@@ -14,13 +14,14 @@ coverage](https://codecov.io/gh/danielvartan/quartor/branch/main/graph/badge.svg
 [![License:
 MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
 [![Contributor
-Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
 <!-- badges: end -->
 
 ## Overview
 
 `quartor` is an R package that provides a set of tools designed to
-facilitate the use of the Quarto publishing system.
+facilitate the use of the [Quarto](https://quarto.org/) publishing
+system.
 
 ## Installation
 
@@ -30,6 +31,17 @@ You can install `quartor` using the
 ``` r
 remotes::install_github("danielvartan/quartor")
 ```
+
+## Usage
+
+`quartor` is equipped with several functions to help you with
+[Quarto](https://quarto.org/), like:
+
+- [`bbt_write_quarto_bib()`](https://danielvartan.github.io/quartor/reference/bbt_write_quarto_bib.html):
+  Scan citations and write a bibliography file for a whole R project.
+
+Click [here](https://danielvartan.github.io/quartor/) to see the full
+list.
 
 ## License
 

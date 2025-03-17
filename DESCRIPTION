@@ -1,5 +1,5 @@
 Package: quartor
-Title: Tools for the Quarto Publishing System
+Title: Quarto Tools
 Version: 0.0.0.9000
 Authors@R: c(
         person(
@@ -10,8 +10,8 @@ Authors@R: c(
             comment = c(ORCID = "0000-0001-7782-759X")
         )
     )
-Description: A set of tools designed to facilitate the use of the Quarto
-    publishing system.
+Description: Tools designed to facilitate the use of the Quarto publishing
+    system.
 License: MIT + file LICENSE
 URL: https://danielvartan.github.io/quartor/,
     https://github.com/danielvartan/quartor/
@@ -23,6 +23,7 @@ Imports:
     cli (>= 3.6.3),
     dplyr (>= 1.1.4),
     here (>= 1.0.1),
+    fs (>= 1.6.5),
     lifecycle (>= 1.0.4),
     magrittr (>= 2.0.3),
     quarto (>= 1.4.4),

@@ -28,7 +28,7 @@ swap_value_between_tags <- function(
   }
 
   if (inherits(value, "function")) {
-    value <- x[rutils:::inbetween_integers(begin_index, end_index)] |> value()
+    value <- x[rutils::inbetween_integers(begin_index, end_index)] |> value()
   }
 
   x[seq(1, begin_index)] |>

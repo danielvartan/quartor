@@ -24,5 +24,5 @@ get_value_between_tags <- function(
     )
   }
 
-  x[rutils:::inbetween_integers(begin_index, end_index)]
+  x[rutils::inbetween_integers(begin_index, end_index)]
 }

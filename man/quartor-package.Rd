@@ -4,9 +4,11 @@
 \name{quartor-package}
 \alias{quartor}
 \alias{quartor-package}
-\title{quartor: Tools for the Quarto Publishing System}
+\title{quartor: Quarto Tools}
 \description{
-A set of tools designed to facilitate the use of the Quarto publishing system.
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
+Tools designed to facilitate the use of the Quarto publishing system.
 }
 \seealso{
 Useful links:

@@ -1,0 +1,4 @@
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QR'\nlibrary(beepr)\nlibrary(cffr)\nlibrary(codemetar)\nlibrary(groomr) # https://github.com/danielvartan/groomr\nlibrary(here)\nlibrary(rutils) # https://github.com/danielvartan/rutils\n```\\E$"}
+{"rule":"DESIGN","sentence":"^\\Q`quartor` is an R package that provides a set of tools designed to facilitate the use of the Quarto publishing system.\\E$"}
+{"rule":"GITHUB","sentence":"^\\Q``` r\nremotes::install_github(\"danielvartan/quartor\")\n```\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q<br>\\E$"}

@@ -11,7 +11,7 @@ set_quarto_spell_check <- function(wd = here::here()) {
       )
     )
   } else {
-    rutils:::create_file(file.path(wd, "WORDLIST"))
+    fs::file_create(file.path(wd, "WORDLIST"))
 
     cli::cli_alert_success(
       paste0(

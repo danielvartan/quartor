@@ -1,4 +1,4 @@
-#' Write a bibliography file from Zotero citation keys for a whole R project
+#' Scan citations and write a bibliography file for a whole R project
 #'
 #' @description
 #'
@@ -13,7 +13,7 @@
 #'
 #' @details
 #'
-#' ## BetterBibTeX
+#' ## Better BibTeX
 #'
 #' To use this function, you must have the BetterBibTeX
 #' ([BBT](https://retorque.re/zotero-better-bibtex/)) extension installed in
