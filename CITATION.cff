@@ -76,6 +76,20 @@ references:
   doi: 10.32614/CRAN.package.cli
   version: '>= 3.6.3'
 - type: software
+  title: clipr
+  abstract: 'clipr: Read and Write from the System Clipboard'
+  notes: Imports
+  url: http://matthewlincoln.net/clipr/
+  repository: https://CRAN.R-project.org/package=clipr
+  authors:
+  - family-names: Lincoln
+    given-names: Matthew
+    email: matthew.d.lincoln@gmail.com
+    orcid: https://orcid.org/0000-0002-4387-3384
+  year: '2025'
+  doi: 10.32614/CRAN.package.clipr
+  version: '>= 0.8.0'
+- type: software
   title: dplyr
   abstract: 'dplyr: A Grammar of Data Manipulation'
   notes: Imports
@@ -101,6 +115,23 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.dplyr
   version: '>= 1.1.4'
+- type: software
+  title: glue
+  abstract: 'glue: Interpreted String Literals'
+  notes: Imports
+  url: https://glue.tidyverse.org/
+  repository: https://CRAN.R-project.org/package=glue
+  authors:
+  - family-names: Hester
+    given-names: Jim
+    orcid: https://orcid.org/0000-0002-2739-7082
+  - family-names: Bryan
+    given-names: Jennifer
+    email: jenny@posit.co
+    orcid: https://orcid.org/0000-0002-6983-2759
+  year: '2025'
+  doi: 10.32614/CRAN.package.glue
+  version: '>= 1.8.0'
 - type: software
   title: here
   abstract: 'here: A Simpler Way to Find Your Files'
@@ -292,6 +323,19 @@ references:
     value: https://docs.ropensci.org/spelling/
   doi: 10.32614/CRAN.package.spelling
   version: '>= 2.3.1'
+- type: software
+  title: summarytools
+  abstract: 'summarytools: Tools to Quickly and Neatly Summarize Data'
+  notes: Imports
+  url: https://github.com/dcomtois/summarytools
+  repository: https://CRAN.R-project.org/package=summarytools
+  authors:
+  - family-names: Comtois
+    given-names: Dominic
+    email: dominic.comtois@gmail.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.summarytools
+  version: '>= 1.1.2'
 - type: software
   title: stringr
   abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'

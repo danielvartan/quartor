@@ -21,7 +21,9 @@ Depends:
 Imports:
     checkmate (>= 2.3.2),
     cli (>= 3.6.3),
+    clipr (>= 0.8.0),
     dplyr (>= 1.1.4),
+    glue (>= 1.8.0),
     here (>= 1.0.1),
     fs (>= 1.6.5),
     lifecycle (>= 1.0.4),

@@ -131,6 +131,19 @@
     },
     "4": {
       "@type": "SoftwareApplication",
+      "identifier": "clipr",
+      "name": "clipr",
+      "version": ">= 0.8.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=clipr"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
       "identifier": "dplyr",
       "name": "dplyr",
       "version": ">= 1.1.4",
@@ -142,7 +155,20 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=dplyr"
     },
-    "5": {
+    "6": {
+      "@type": "SoftwareApplication",
+      "identifier": "glue",
+      "name": "glue",
+      "version": ">= 1.8.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=glue"
+    },
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "here",
       "name": "here",
@@ -155,7 +181,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=here"
     },
-    "6": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "fs",
       "name": "fs",
@@ -168,7 +194,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=fs"
     },
-    "7": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "lifecycle",
       "name": "lifecycle",
@@ -181,7 +207,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lifecycle"
     },
-    "8": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "magrittr",
       "name": "magrittr",
@@ -194,7 +220,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magrittr"
     },
-    "9": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "quarto",
       "name": "quarto",
@@ -207,13 +233,13 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=quarto"
     },
-    "10": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "rbbt",
       "name": "rbbt",
       "sameAs": "https://github.com/wmoldham/rbbt"
     },
-    "11": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
@@ -226,7 +252,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
     },
-    "12": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
@@ -239,13 +265,13 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     },
-    "13": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "rutils",
       "name": "rutils",
       "sameAs": "https://github.com/danielvartan/rutils"
     },
-    "14": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
@@ -258,7 +284,20 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=spelling"
     },
-    "15": {
+    "17": {
+      "@type": "SoftwareApplication",
+      "identifier": "summarytools",
+      "name": "summarytools",
+      "version": ">= 1.1.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=summarytools"
+    },
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -271,7 +310,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "16": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "yaml",
       "name": "yaml",
@@ -286,7 +325,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "101.551KB",
+  "fileSize": "106.474KB",
   "citation": [
     {
       "@type": "CreativeWork",
