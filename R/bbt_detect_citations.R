@@ -45,13 +45,15 @@ bbt_detect_citations_chr <- function(text) {
   text |>
     paste0(collapse = "\n") |>
     # Don't include text in code chunks
-    stringr::str_remove("\n```\\{.+?\\}.+?\r?\n```") |>
+    stringr::str_remove_all("\n```\\{.+?\\}.+?\r?\n```") |>
     # Don't include text in in-line R code
-    stringr::str_remove("\\`r.+?\\`") |>
+    stringr::str_remove_all("\\`r.+?\\`") |>
     # Don't include email addresses
-    stringr::str_remove("([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+)") |>
+    stringr::str_remove_all(
+      "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+"
+    ) |>
     # Don't include inline markdown URLs
-    stringr::str_remove("\\(http.+?\\)|<http.+?>") |>
+    stringr::str_remove_all("\\(http.+?\\)|<http.+?>") |>
     stringr::str_match_all(
       stringr::regex(pattern, multiline = TRUE, dotall = TRUE)
     ) |>
