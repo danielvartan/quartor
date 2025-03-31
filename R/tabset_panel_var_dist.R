@@ -9,10 +9,11 @@ tabset_panel_var_dist <- function( #nolint
     suffix = "",
     root = ".",
     qual_chart = TRUE,
+    summarytools = TRUE,
     write = TRUE,
     verbose = TRUE
   ) {
-  checkmate::assert_tibble(data)
+  checkmate::assert_data_frame(data)
   checkmate::assert_character(cols, min.len = 1, any.missing = FALSE)
   checkmate::assert_subset(cols, names(data))
   checkmate::assert_character(col_labels, len = length(cols), null.ok = TRUE)
@@ -23,6 +24,7 @@ tabset_panel_var_dist <- function( #nolint
   checkmate::assert_atomic(suffix)
   checkmate::assert_string(root)
   checkmate::assert_flag(qual_chart)
+  checkmate::assert_flag(summarytools)
   checkmate::assert_flag(write)
   checkmate::assert_flag(verbose)
 
@@ -44,7 +46,10 @@ tabset_panel_var_dist <- function( #nolint
   )
 
   libraries <-
-    c("cli", "clipr", "glue", "here", "plotr", "readr", "summarytools") |>
+    c(
+      "cli", "clipr", "glue", "here", "plotr", "readr", "rutils",
+      "summarytools"
+    ) |>
     sort() %>%
     paste0("library(", ., ")", collapse = "\n")
 
@@ -64,6 +69,33 @@ tabset_panel_var_dist <- function( #nolint
 
     if (!is.numeric(data[[cols[i]]]) &&
           !prettycheck::test_temporal(data[[cols[i]]])) {
+      if (isTRUE(summarytools)) {
+        freq_fun <- glue::glue(
+          '
+          summarytools::freq(
+              var = {cols[i]},
+              style = "rmarkdown",
+              plain.ascii = FALSE,
+              headings = FALSE
+            )
+          '
+        )
+      } else {
+        freq_fun <- glue::glue(
+          '
+          rutils:::stats_summary(
+              col = "{cols[i]}",
+              na_rm = TRUE,
+              remove_outliers = FALSE,
+              iqr_mult = 1.5,
+              hms_format = TRUE,
+              threshold = hms::parse_hms("12:00:00"),
+              as_list = FALSE
+            )
+          '
+        )
+      }
+
       out <- c(
         out,
         glue::glue(
@@ -76,12 +108,7 @@ tabset_panel_var_dist <- function( #nolint
         #| output: asis
 
         {data_name} |>
-          summarytools::freq(
-            var = {cols[i]},
-            style = "rmarkdown",
-            plain.ascii = FALSE,
-            headings = FALSE
-          )
+          {freq_fun}
         ```
 
         [Source: {source}]{{.legend}}
@@ -119,6 +146,33 @@ tabset_panel_var_dist <- function( #nolint
       }
 
     } else {
+      if (isTRUE(summarytools)) {
+        descr_fun <- glue::glue(
+          '
+          summarytools::descr(
+              var = {cols[i]},
+              style = "rmarkdown",
+              plain.ascii = FALSE,
+              headings = FALSE
+            )
+          '
+        )
+      } else {
+        descr_fun <- glue::glue(
+          '
+          rutils:::stats_summary(
+              col = "{cols[i]}",
+              na_rm = TRUE,
+              remove_outliers = FALSE,
+              iqr_mult = 1.5,
+              hms_format = TRUE,
+              threshold = hms::parse_hms("12:00:00"),
+              as_list = FALSE
+            )
+          '
+        )
+      }
+
       out <- c(
         out,
         glue::glue(
@@ -131,12 +185,7 @@ tabset_panel_var_dist <- function( #nolint
       #| output: asis
 
       {data_name} |>
-        summarytools::descr(
-          var = {cols[i]},
-          style = "rmarkdown",
-          plain.ascii = FALSE,
-          headings = FALSE
-        )
+        {descr_fun}
       ```
 
       [Source: {source}]{{.legend}}
@@ -148,8 +197,7 @@ tabset_panel_var_dist <- function( #nolint
       ```{{r}}
       #| code-fold: true
 
-      {data_name} |>
-        plotr::plot_dist(col = "{cols[i]}")
+      {data_name} |> plotr:::plot_dist(col = "{cols[i]}")
       ```
 
       [Source: {source}]{{.legend}}
@@ -163,8 +211,7 @@ tabset_panel_var_dist <- function( #nolint
       ```{{r}}
       #| code-fold: true
 
-      {data_name} |>
-        plotr::plot_box_plot(col = "{cols[i]}")
+      {data_name} |> plotr:::plot_box_plot(col = "{cols[i]}")
       ```
 
       [Source: {source}]{{.legend}}

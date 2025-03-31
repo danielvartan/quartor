@@ -9,7 +9,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
     write = TRUE,
     verbose = TRUE
   ) {
-  checkmate::assert_tibble(data)
+  checkmate::assert_data_frame(data)
   checkmate::assert_character(cols, min.len = 1, any.missing = FALSE)
   checkmate::assert_subset(c(cols, "misf"), names(data))
   checkmate::assert_character(col_labels, len = length(cols), null.ok = TRUE)

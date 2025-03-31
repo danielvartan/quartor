@@ -12,7 +12,7 @@ tabset_panel_var_homoscedasticity <- function( #nolint
     write = TRUE,
     verbose = TRUE
   ) {
-  checkmate::assert_tibble(data)
+  checkmate::assert_data_frame(data)
   checkmate::assert_class(fit, "workflow")
   checkmate::assert_character(cols, min.len = 1, any.missing = FALSE)
   checkmate::assert_subset(cols, names(data))
