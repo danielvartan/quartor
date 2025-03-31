@@ -63,7 +63,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
             col_labels = col_labels,
             jitter = jitter,
             source = source,
-            heading = paste0(heading, '#'),
+            heading = paste0(heading, "#"),
             data_name = i_data_name,
             suffix = tolower(i),
             root = root,
@@ -71,7 +71,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
             verbose = FALSE
           )
         )
-    )
+      )
 
     if (!i == "D") out <- c(out, "\n\n")
   }

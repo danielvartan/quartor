@@ -53,7 +53,7 @@ check_missing_dollar_signs_in_dir <- function( #nolint
   }
 
   for (i in files) {
-    test <- rutils::shush(check_missing_dollar_signs(i))
+    test <- shush(check_missing_dollar_signs(i))
 
     if (!length(test) == 0) {
       cli::cli_h1(paste0("File ", basename(i)))

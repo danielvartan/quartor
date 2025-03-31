@@ -40,7 +40,7 @@ tabset_panel_var_dist <- function( #nolint
 
   file <- here::here(
     "qmd",
-    glue::glue("_tabset-panel-var-distribution{suffix}.qmd")
+    glue::glue("_tabset-panel-var-dist{suffix}.qmd")
   )
 
   libraries <-
@@ -62,14 +62,15 @@ tabset_panel_var_dist <- function( #nolint
       box_plot_caption <- glue::glue("Box plot of the `{cols[i]}` variable")
     }
 
-    if (!is.numeric(data[[cols[i]]])) {
+    if (!is.numeric(data[[cols[i]]]) &&
+          !prettycheck::test_temporal(data[[cols[i]]])) {
       out <- c(
         out,
         glue::glue(
           '
         {heading} `{col_labels[i]}`
 
-        ::: {{#tbl-var-distribution-freqs-{col_fix}-{sample}}}
+        ::: {{#tbl-var-dist-freqs-{col_fix}-{sample}}}
         ```{{r}}
         #| code-fold: true
         #| output: asis
@@ -97,7 +98,7 @@ tabset_panel_var_dist <- function( #nolint
           "\n\n",
           glue::glue(
             '
-      ::: {{#fig-var-distribution-charts-bar-plot-{col_fix}-{sample}}}
+      ::: {{#fig-var-dist-charts-bar-plot-{col_fix}-{sample}}}
       ```{{r}}
       #| code-fold: true
 
@@ -124,7 +125,7 @@ tabset_panel_var_dist <- function( #nolint
           '
       {heading} `{col_labels[i]}`
 
-      ::: {{#tbl-var-distribution-stats-{col_fix}-{sample}}}
+      ::: {{#tbl-var-dist-stats-{col_fix}-{sample}}}
       ```{{r}}
       #| code-fold: true
       #| output: asis
@@ -143,7 +144,7 @@ tabset_panel_var_dist <- function( #nolint
       Statistics for the `{cols[i]}` variable.
       :::
 
-      ::: {{#fig-var-distribution-charts-hist-qq-plot-{col_fix}-{sample}}}
+      ::: {{#fig-var-dist-charts-hist-qq-plot-{col_fix}-{sample}}}
       ```{{r}}
       #| code-fold: true
 
@@ -158,7 +159,7 @@ tabset_panel_var_dist <- function( #nolint
       variable and the theoretical quantiles of the normal distribution.
       :::
 
-      ::: {{#fig-var-distribution-charts-box-plot-{col_fix}-{sample}}}
+      ::: {{#fig-var-dist-charts-box-plot-{col_fix}-{sample}}}
       ```{{r}}
       #| code-fold: true
 

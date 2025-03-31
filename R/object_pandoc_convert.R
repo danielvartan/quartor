@@ -28,7 +28,7 @@ object_pandoc_convert <- function(
     verbose = verbose,
     wd = tempdir()
   ) |>
-    rutils::shush()
+    shush()
 
   readLines(out_file)
 }

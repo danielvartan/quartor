@@ -18,7 +18,7 @@ object_quarto_render <- function(
 
   out_file <- file.path(
     dirname(in_file),
-    paste0(rutils::get_file_name_without_ext(in_file), ext)
+    paste0(get_file_name_without_ext(in_file), ext)
   )
 
   if (output_format == "latex") {

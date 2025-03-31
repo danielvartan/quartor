@@ -28,12 +28,13 @@ Imports:
     fs (>= 1.6.5),
     lifecycle (>= 1.0.4),
     magrittr (>= 2.0.3),
+    prettycheck,
     quarto (>= 1.4.4),
     rbbt,
     readr (>= 2.1.5),
     rmarkdown (>= 2.29),
-    rutils,
     spelling (>= 2.3.1),
+    stats (>= 4.3),
     stringr (>= 1.5.1),
     yaml (>= 2.3.10)
 Suggests:
@@ -42,7 +43,7 @@ Suggests:
     knitr (>= 1.49),
     testthat (>= 3.2.2)
 Remotes:
-    github::danielvartan/rutils,
+    github::danielvartan/prettycheck,
     github::wmoldham/rbbt
 Config/testthat/edition: 3
 Encoding: UTF-8
