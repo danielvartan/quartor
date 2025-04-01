@@ -44,7 +44,8 @@ tabset_panel_var_dist <- function( #nolint
   )
 
   libraries <-
-    c("plotr", "summarytools") |>
+    ifelse(isTRUE(summarytools), "summarytools", "rutils") |>
+    c("plotr") |>
     sort() %>%
     paste0("library(", ., ")", collapse = "\n")
 
