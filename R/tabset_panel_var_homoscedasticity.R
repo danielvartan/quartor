@@ -38,7 +38,7 @@ tabset_panel_var_homoscedasticity <- function( #nolint
 
   file <- here::here(
     "qmd",
-    glue::glue("_tabset-panel-var-homoscedasticity{suffix}.qmd")
+    glue::glue("_tabset-panel{suffix}-var-homoscedasticity.qmd")
   )
 
   libraries <-
@@ -65,7 +65,7 @@ tabset_panel_var_homoscedasticity <- function( #nolint
         '
         {heading} {col_labels[i]}
 
-        ::: {{#tbl-var-homoscedasticity{suffix}-{col_fix}}}
+        ::: {{#tbl{suffix}-var-homoscedasticity-{col_fix}}}
         ```{{r}}
         #| code-fold: true
 

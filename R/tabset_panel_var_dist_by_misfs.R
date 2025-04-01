@@ -6,6 +6,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
     source = "Created by the authors.",
     heading = "####",
     root = ".",
+    summarytools = TRUE,
     write = TRUE,
     verbose = TRUE
   ) {
@@ -17,6 +18,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
   checkmate::assert_string(source, null.ok = TRUE)
   checkmate::assert_string(heading, pattern = "^#*")
   checkmate::assert_string(root)
+  checkmate::assert_flag(summarytools)
   checkmate::assert_flag(write)
   checkmate::assert_flag(verbose)
 
@@ -33,7 +35,9 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
     glue::glue("_panel-tabset-var-dist-by-misfs.qmd")
   )
 
-  libraries <- c("plotr", "summarytools") |>
+  libraries <-
+    ifelse(isTRUE(summarytools), "summarytools", "rutils") |>
+    c("plotr") |>
     sort() %>%
     paste0("library(", ., ")", collapse = "\n")
 
@@ -67,6 +71,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
             data_name = i_data_name,
             suffix = tolower(i),
             root = root,
+            summarytools = summarytools,
             write = FALSE,
             verbose = FALSE
           )

@@ -39,7 +39,7 @@ tabset_panel_coef_dfbetas <- function( #nolint
 
   file <- here::here(
     "qmd",
-    glue::glue("_tabset-panel-coef-dfbetas{suffix}.qmd")
+    glue::glue("_tabset-panel{suffix}-coef-dfbetas.qmd")
   )
 
   libraries <-
@@ -81,7 +81,7 @@ tabset_panel_coef_dfbetas <- function( #nolint
         '
         {heading} {coef_labels[i]}
 
-        ::: {{#tbl-coef-dfbetas{suffix}-{coef_fix_1}}}
+        ::: {{#tbl{suffix}-coef-dfbetas-{coef_fix_1}}}
         ```{{r}}
         #| code-fold: true
 
