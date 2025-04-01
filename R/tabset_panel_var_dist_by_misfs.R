@@ -30,7 +30,7 @@ tabset_panel_var_dist_by_misfs <- function( #nolint
 
   file <- here::here(
     "qmd",
-    glue::glue("_panel-tabset-var-distribution-by-misfs.qmd")
+    glue::glue("_panel-tabset-var-dist-by-misfs.qmd")
   )
 
   libraries <- c("plotr", "summarytools") |>

@@ -1,26 +1,26 @@
 tabset_panel_var_homoscedasticity <- function( #nolint
-    data, #nolint
-    fit,
+    model, #nolint
+    data,
     cols,
     col_labels = cols,
     source = rep("Created by the author.", length(cols)),
     heading = "###",
-    data_name = "data",
-    fit_name = "fit",
+    data_name = deparse(substitute(data)),
+    model_name = deparse(substitute(model)),
     suffix = "",
-    root = "..",
+    root = ".",
     write = TRUE,
     verbose = TRUE
   ) {
+  checkmate::assert_multi_class(model, c("lm", "model_fit", "workflow"))
   checkmate::assert_data_frame(data)
-  checkmate::assert_class(fit, "workflow")
   checkmate::assert_character(cols, min.len = 1, any.missing = FALSE)
   checkmate::assert_subset(cols, names(data))
   checkmate::assert_character(col_labels, len = length(cols))
   checkmate::assert_character(source, len = length(cols))
   checkmate::assert_string(heading, pattern = "^#*")
   checkmate::assert_string(data_name)
-  checkmate::assert_string(fit_name)
+  checkmate::assert_string(model_name)
   checkmate::assert_string(suffix)
   checkmate::assert_string(root)
   checkmate::assert_flag(write)
@@ -31,15 +31,18 @@ tabset_panel_var_homoscedasticity <- function( #nolint
   . <- NULL
   # nolint end
 
+  suffix <- as.character(suffix)
+
   if (!file.exists(here::here("qmd"))) dir.create(here::here("qmd"))
+  if (!suffix == "") suffix <- paste0("-", suffix)
 
   file <- here::here(
     "qmd",
-    glue::glue("_tabset-panel-var-homoscedasticity-{suffix}.qmd")
+    glue::glue("_tabset-panel-var-homoscedasticity{suffix}.qmd")
   )
 
   libraries <-
-    c("dplyr", "ggplot2", "latex2exp", "parsnip", "rutils", "stats") |>
+    c("plotr") |>
     sort() %>%
     paste0("library(", ., ")", collapse = "\n")
 
@@ -54,47 +57,28 @@ tabset_panel_var_homoscedasticity <- function( #nolint
       end <- "\n\n"
     }
 
-    col_fix <-
-      cols[i] |>
-      stringr::str_to_lower() |>
-      stringr::str_replace_all("_", "-")
+    col_fix <- cols[i] |> make_machine_readable()
 
     out <- c(
       out,
       glue::glue(
-        "
-      {heading} {col_labels[i]}
+        '
+        {heading} {col_labels[i]}
 
-      ::: {{#tbl-{suffix}-diag-homoscedasticity-{col_fix}}}
-      ```{{r}}
-      #| code-fold: true
+        ::: {{#tbl-var-homoscedasticity{suffix}-{col_fix}}}
+        ```{{r}}
+        #| code-fold: true
 
-      plot <-
-        {fit_name} |>
-        stats::predict({data_name}) |>
-        dplyr::mutate(
-          .sd_resid =
-            {fit_name} |>
-            parsnip::extract_fit_engine() |>
-            stats::rstandard() |>
-            abs() |>
-            sqrt()
-        ) |>
-        dplyr::bind_cols(data) |>
-        ggplot2::ggplot(ggplot2::aes({cols[i]}, .sd_resid)) +
-        ggplot2::geom_point() +
-        ggplot2::geom_smooth(color = 'red') +
-        ggplot2::labs(
-          x = '{col_labels[i]}',
-          y = latex2exp::TeX('$\\\\sqrt{{|Standardized \\\\ Residuals|}}$')
-        )
+        {model_name} |>
+          plotr:::plot_homoscedasticity(
+            data = {data_name},
+            col = {cols[i]}
+          )
+        ```
 
-      plot |> print() |> rutils::shush()
-      ```
-
-      Relation between `{cols[i]}` and the model standardized residuals.
-      :::{end}
-      "
+        Relation between `{cols[i]}` and the model standardized residuals.
+        :::{end}
+        '
       )
     )
   }

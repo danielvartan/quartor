@@ -1,7 +1,7 @@
 tabset_panel_var_dist <- function( #nolint
     data, #nolint
     cols,
-    col_labels = NULL,
+    col_labels = cols,
     jitter = TRUE,
     source = "Created by the authors.",
     heading = "###",
@@ -33,10 +33,8 @@ tabset_panel_var_dist <- function( #nolint
   . <- NULL
   # nolint end
 
-  sample <- sample(1000:9999, 1)
   suffix <- as.character(suffix)
 
-  if (is.null(col_labels)) col_labels <- cols
   if (!file.exists(here::here("qmd"))) dir.create(here::here("qmd"))
   if (!suffix == "") suffix <- paste0("-", suffix)
 
@@ -46,17 +44,14 @@ tabset_panel_var_dist <- function( #nolint
   )
 
   libraries <-
-    c(
-      "cli", "clipr", "glue", "here", "plotr", "readr", "rutils",
-      "summarytools"
-    ) |>
+    c("plotr", "summarytools") |>
     sort() %>%
     paste0("library(", ., ")", collapse = "\n")
 
   out <- ":::: {.panel-tabset}\n"
 
   for (i in seq_along(cols)) {
-    col_fix <- cols[i] |> stringr::str_replace_all("_", "-")
+    col_fix <- cols[i] |> make_machine_readable()
 
     if (isTRUE(jitter)) {
       box_plot_caption <- glue::glue(
@@ -100,21 +95,21 @@ tabset_panel_var_dist <- function( #nolint
         out,
         glue::glue(
           '
-        {heading} `{col_labels[i]}`
+          {heading} `{col_labels[i]}`
 
-        ::: {{#tbl-var-dist-freqs-{col_fix}-{sample}}}
-        ```{{r}}
-        #| code-fold: true
-        #| output: asis
+          ::: {{#tbl-var-dist{suffix}-freqs-{col_fix}}}
+          ```{{r}}
+          #| code-fold: true
+          #| output: asis
 
-        {data_name} |>
-          {freq_fun}
-        ```
+          {data_name} |>
+            {freq_fun}
+          ```
 
-        [Source: {source}]{{.legend}}
+          [Source: {source}]{{.legend}}
 
-        Frequencies of the `{cols[i]}` variable.
-        :::
+          Frequencies of the `{cols[i]}` variable.
+          :::
           '
         )
       )
@@ -125,7 +120,7 @@ tabset_panel_var_dist <- function( #nolint
           "\n\n",
           glue::glue(
             '
-      ::: {{#fig-var-dist-charts-bar-plot-{col_fix}-{sample}}}
+      ::: {{#fig-var-dist{suffix}-charts-bar-plot-{col_fix}}}
       ```{{r}}
       #| code-fold: true
 
@@ -179,7 +174,7 @@ tabset_panel_var_dist <- function( #nolint
           '
       {heading} `{col_labels[i]}`
 
-      ::: {{#tbl-var-dist-stats-{col_fix}-{sample}}}
+      ::: {{#tbl-var-dist-{suffix}stats-{col_fix}}}
       ```{{r}}
       #| code-fold: true
       #| output: asis
@@ -193,7 +188,7 @@ tabset_panel_var_dist <- function( #nolint
       Statistics for the `{cols[i]}` variable.
       :::
 
-      ::: {{#fig-var-dist-charts-hist-qq-plot-{col_fix}-{sample}}}
+      ::: {{#fig-var-dist-{suffix}charts-hist-qq-plot-{col_fix}}}
       ```{{r}}
       #| code-fold: true
 
@@ -207,7 +202,7 @@ tabset_panel_var_dist <- function( #nolint
       variable and the theoretical quantiles of the normal distribution.
       :::
 
-      ::: {{#fig-var-dist-charts-box-plot-{col_fix}-{sample}}}
+      ::: {{#fig-var-dist-{suffix}charts-box-plot-{col_fix}}}
       ```{{r}}
       #| code-fold: true
 

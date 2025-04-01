@@ -198,6 +198,33 @@ references:
   doi: 10.32614/CRAN.package.magrittr
   version: '>= 2.0.3'
 - type: software
+  title: parsnip
+  abstract: 'parsnip: A Common API to Modeling and Analysis Functions'
+  notes: Imports
+  url: https://parsnip.tidymodels.org/
+  repository: https://CRAN.R-project.org/package=parsnip
+  authors:
+  - family-names: Kuhn
+    given-names: Max
+    email: max@posit.co
+  - family-names: Vaughan
+    given-names: Davis
+    email: davis@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.parsnip
+  version: '>= 1.3.1'
+- type: software
+  title: prettycheck
+  abstract: 'prettycheck: Pretty assertive programming'
+  notes: Imports
+  url: https://danielvartan.github.io/prettycheck/
+  authors:
+  - family-names: Vartanian
+    given-names: Daniel
+    email: danvartan@gmail.com
+    orcid: https://orcid.org/0000-0001-7782-759X
+  year: '2025'
+- type: software
   title: quarto
   abstract: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
   notes: Imports
@@ -293,17 +320,6 @@ references:
   doi: 10.32614/CRAN.package.rmarkdown
   version: '>= 2.29'
 - type: software
-  title: rutils
-  abstract: 'rutils: Utility Functions for R'
-  notes: Imports
-  url: https://danielvartan.github.io/rutils/
-  authors:
-  - family-names: Vartanian
-    given-names: Daniel
-    email: danvartan@gmail.com
-    orcid: https://orcid.org/0000-0001-7782-759X
-  year: '2025'
-- type: software
   title: spelling
   abstract: 'spelling: Tools for Spell Checking in R'
   notes: Imports
@@ -324,18 +340,16 @@ references:
   doi: 10.32614/CRAN.package.spelling
   version: '>= 2.3.1'
 - type: software
-  title: summarytools
-  abstract: 'summarytools: Tools to Quickly and Neatly Summarize Data'
+  title: stats
+  abstract: 'R: A Language and Environment for Statistical Computing'
   notes: Imports
-  url: https://github.com/dcomtois/summarytools
-  repository: https://CRAN.R-project.org/package=summarytools
   authors:
-  - family-names: Comtois
-    given-names: Dominic
-    email: dominic.comtois@gmail.com
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
   year: '2025'
-  doi: 10.32614/CRAN.package.summarytools
-  version: '>= 1.1.2'
+  version: '>= 4.3'
 - type: software
   title: stringr
   abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
@@ -434,6 +448,17 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.knitr
   version: '>= 1.49'
+- type: software
+  title: plotr
+  abstract: 'plotr: Plots Made Easy'
+  notes: Suggests
+  url: https://danielvartan.github.io/plotr/
+  authors:
+  - family-names: Vartanian
+    given-names: Daniel
+    email: danvartan@gmail.com
+    orcid: https://orcid.org/0000-0001-7782-759X
+  year: '2025'
 - type: software
   title: testthat
   abstract: 'testthat: Unit Testing for R'

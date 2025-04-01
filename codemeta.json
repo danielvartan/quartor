@@ -84,6 +84,12 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "plotr",
+      "name": "plotr",
+      "sameAs": "https://github.com/danielvartan/plotr"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
       "version": ">= 3.2.2",
@@ -222,6 +228,25 @@
     },
     "11": {
       "@type": "SoftwareApplication",
+      "identifier": "parsnip",
+      "name": "parsnip",
+      "version": ">= 1.3.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=parsnip"
+    },
+    "12": {
+      "@type": "SoftwareApplication",
+      "identifier": "prettycheck",
+      "name": "prettycheck",
+      "sameAs": "https://github.com/danielvartan/prettycheck"
+    },
+    "13": {
+      "@type": "SoftwareApplication",
       "identifier": "quarto",
       "name": "quarto",
       "version": ">= 1.4.4",
@@ -233,13 +258,13 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=quarto"
     },
-    "12": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "rbbt",
       "name": "rbbt",
       "sameAs": "https://github.com/wmoldham/rbbt"
     },
-    "13": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
@@ -252,7 +277,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
     },
-    "14": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
@@ -265,13 +290,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     },
-    "15": {
-      "@type": "SoftwareApplication",
-      "identifier": "rutils",
-      "name": "rutils",
-      "sameAs": "https://github.com/danielvartan/rutils"
-    },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
@@ -284,20 +303,13 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=spelling"
     },
-    "17": {
-      "@type": "SoftwareApplication",
-      "identifier": "summarytools",
-      "name": "summarytools",
-      "version": ">= 1.1.2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=summarytools"
-    },
     "18": {
+      "@type": "SoftwareApplication",
+      "identifier": "stats",
+      "name": "stats",
+      "version": ">= 4.3"
+    },
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -310,7 +322,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "19": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "yaml",
       "name": "yaml",
@@ -325,7 +337,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "106.474KB",
+  "fileSize": "118.255KB",
   "citation": [
     {
       "@type": "CreativeWork",

@@ -28,6 +28,7 @@ Imports:
     fs (>= 1.6.5),
     lifecycle (>= 1.0.4),
     magrittr (>= 2.0.3),
+    parsnip (>= 1.3.1),
     prettycheck,
     quarto (>= 1.4.4),
     rbbt,
@@ -41,8 +42,10 @@ Suggests:
     bslib (>= 0.9.0),
     covr (>= 3.6.4),
     knitr (>= 1.49),
+    plotr,
     testthat (>= 3.2.2)
 Remotes:
+    github::danielvartan/plotr,
     github::danielvartan/prettycheck,
     github::wmoldham/rbbt
 Config/testthat/edition: 3
