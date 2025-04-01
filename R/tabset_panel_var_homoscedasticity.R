@@ -72,7 +72,8 @@ tabset_panel_var_homoscedasticity <- function( #nolint
         {model_name} |>
           plotr:::plot_homoscedasticity(
             data = {data_name},
-            col = "{cols[i]}"
+            col = "{cols[i]}",
+            x_label = "{col_labels[i]}"
           )
         ```
 
