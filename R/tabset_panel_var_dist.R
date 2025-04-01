@@ -96,7 +96,7 @@ tabset_panel_var_dist <- function( #nolint
         out,
         glue::glue(
           '
-          {heading} `{col_labels[i]}`
+          {heading} {col_labels[i]}
 
           ::: {{#tbl{suffix}-var-dist-freqs-{col_fix}}}
           ```{{r}}
@@ -173,7 +173,7 @@ tabset_panel_var_dist <- function( #nolint
         out,
         glue::glue(
           '
-      {heading} `{col_labels[i]}`
+      {heading} {col_labels[i]}
 
       ::: {{#tbl{suffix}-var-dist-stats-{col_fix}}}
       ```{{r}}
