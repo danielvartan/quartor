@@ -121,21 +121,21 @@ tabset_panel_var_dist <- function( #nolint
           "\n\n",
           glue::glue(
             '
-      ::: {{#fig{suffix}-var-dist-charts-bar-plot-{col_fix}}}
-      ```{{r}}
-      #| code-fold: true
+            ::: {{#fig{suffix}-var-dist-charts-bar-plot-{col_fix}}}
+            ```{{r}}
+            #| code-fold: true
 
-      {data_name} |>
-        plotr:::plot_bar(
-          col = "{cols[i]}",
-          y_label = "{col_labels[i]}"
-        )
-      ```
+            {data_name} |>
+              plotr:::plot_bar(
+                col = "{cols[i]}",
+                y_label = "{col_labels[i]}"
+              )
+            ```
 
-      [Source: {source}]{{.legend}}
+            [Source: {source}]{{.legend}}
 
-      Bar plot of the `{cols[i]}` variable.
-      :::
+            Bar plot of the `{cols[i]}` variable.
+            :::
             '
           )
         )
@@ -193,7 +193,11 @@ tabset_panel_var_dist <- function( #nolint
       ```{{r}}
       #| code-fold: true
 
-      {data_name} |> plotr:::plot_dist(col = "{cols[i]}")
+      {data_name} |>
+        plotr:::plot_dist(
+          col = "{cols[i]}",
+          x_label = "{col_labels[i]}"
+        )
       ```
 
       [Source: {source}]{{.legend}}
