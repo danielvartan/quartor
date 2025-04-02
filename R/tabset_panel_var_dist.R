@@ -2,7 +2,7 @@ tabset_panel_var_dist <- function( #nolint
     data, #nolint
     cols,
     col_labels = cols,
-    jitter = TRUE,
+    jitter = FALSE,
     source = "Created by the author.",
     heading = "###",
     data_name = deparse(substitute(data)),
