@@ -60,7 +60,7 @@ tabset_panel_var_dist <- function( #nolint
         "in black."
       )
     } else {
-      box_plot_caption <- glue::glue("Box plot of the `{cols[i]}` variable")
+      box_plot_caption <- glue::glue("Box plot of the `{cols[i]}` variable.")
     }
 
     if (!is.numeric(data[[cols[i]]]) &&
